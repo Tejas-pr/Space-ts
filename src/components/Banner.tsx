@@ -1,5 +1,6 @@
 import sateliteImg from "../assets/satellite.jpg";
-import { motion } from "motion/react"
+import { motion } from "framer-motion";
+
 interface DATA {
   image: string;
   subTitle: string;
@@ -19,60 +20,74 @@ const data: DATA[] = [
 
 const Banner = () => {
   return (
-    <>
-      <section className="bg-black text-white pb-12 pt-12">
-        <motion.div 
+    <section className="bg-black text-white pb-12 pt-12">
+      <motion.div
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
         transition={{
           duration: 0.8,
           delay: 0.3,
-          ease: [0, 0.71, 0.2, 1.01]
+          ease: [0, 0.71, 0.2, 1.01],
         }}
-        className="container">
-          {data.map((items, index) => (
-            <div
-              key={index}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center"
+        className="container"
+      >
+        {data.map((items, index) => (
+          <div
+            key={index}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center"
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <div data-aos="zoom-in">
-                <img
-                  src={items.image}
-                  alt={items.title}
-                  className="w-full sm:w-[80%] mx-auto max-h-[350px] object-cover rounded-lg"
-                />
-              </div>
-              <div className="space-y-3 xl:pr-36 p-4 border-r-2 border-b-2 border-r-sky-800 border-b-sky-800 ">
-                <p
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  className="text-sky-800 uppercase"
-                >
-                  {items.subTitle}
-                </p>
-                <h1
-                  data-aos="fade-up"
-                  data-aos-delay="500"
-                  className="uppercase text-5xl"
-                >
-                  {items.title}
-                </h1>
-                <p data-aos="fade-up" data-aos-delay="700">
-                  {items.description}
-                </p>
-                <button
-                  data-aos="fade-up"
-                  data-aos-delay="900"
-                  className="bg-blue-400 text-white hover:bg-blue-500 px-4 py-1 rounded-md duration-200"
-                >
+              <img
+                src={items.image}
+                alt={items.title}
+                className="w-full sm:w-[80%] mx-auto max-h-[350px] object-cover rounded-lg"
+              />
+            </motion.div>
+
+            <div className="space-y-6 xl:pr-36 p-4 border-r-2 border-b-2 border-r-sky-800 border-b-sky-800">
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-sky-800 uppercase"
+              >
+                {items.subTitle}
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                className="uppercase text-5xl"
+              >
+                {items.title}
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+              >
+                {items.description}
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 1 }}
+              >
+                <button className="bg-blue-400 text-white hover:bg-blue-500 px-4 py-1 rounded-md duration-200">
                   View All
                 </button>
-              </div>
+              </motion.div>
             </div>
-          ))}
-        </motion.div>
-      </section>
-    </>
+          </div>
+        ))}
+      </motion.div>
+    </section>
   );
 };
 

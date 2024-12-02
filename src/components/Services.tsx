@@ -80,7 +80,8 @@ const Services = () => {
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 relative mt-10 z-10"
           variants={containerVariants}
           initial="hidden"
-          animate="show"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
         >
           {ServiceData.map((services, index) => (
             <motion.div
@@ -95,6 +96,7 @@ const Services = () => {
             </motion.div>
           ))}
         </motion.div>
+
         <img
           src={wave2}
           alt="wave"

@@ -16,10 +16,8 @@ const Footer = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          {/* Left Section */}
           <motion.div
             className="p-8 flex-1 min-w-[300px] max-w-[400px]"
-            whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 200 }}
           >
             <h1 className="text-4xl">Want To Upgrade Yourself</h1>
@@ -59,7 +57,6 @@ const Footer = () => {
                 />
               </div>
               <motion.button
-                whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="bg-blue-400 text-white hover:bg-blue-500 px-4 py-2 rounded-md duration-200"
               >
@@ -68,14 +65,12 @@ const Footer = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Section */}
           <motion.div
             className="flex flex-row flex-wrap justify-center gap-14 flex-1 min-w-[300px] max-w-[600px]"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            {/* Links Section */}
             <div className="flex flex-col gap-y-5">
               <h1>Important Links</h1>
               <a href="#Home" className="font-thin">
@@ -109,10 +104,7 @@ const Footer = () => {
             {/* Social Icons */}
             <div className="flex flex-col gap-y-5">
               <h1 className="hidden md:flex">Socials</h1>
-              <motion.div
-                className="flex md:flex-row gap-x-10 md:gap-x-5"
-                whileHover={{ scale: 1.1 }}
-              >
+              <motion.div className="flex md:flex-row gap-x-10 md:gap-x-5">
                 <a href="#LinkedinIn" className="font-thin text-2xl">
                   <LiaLinkedinIn />
                 </a>

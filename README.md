@@ -15,7 +15,7 @@ This landing page is **fully responsive**, ensuring a seamless user experience a
 
 ## Demo
 
-Check out the live project here: [Space Landing Page](https://github.com/Tejas-pr/Space-ts)
+Check out the live project here: [Space Landing Page](https://space-ts-landingpage.vercel.app/)
 
 ## Installation and Setup
 
