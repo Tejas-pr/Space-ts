@@ -58,22 +58,22 @@ const ServiceData: SERVICE[] = [
 
 const Services = () => {
   return (
-    <div className="pt-4 pb-10 text-white bg-black relative z-50">
+    <div className="pt-4 pb-10 p-8 text-white bg-black relative z-50">
       <div className="min-h-[400px]">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 relative mt-10 z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 relative mt-10 z-10">
           {ServiceData.map((services, index) => (
             <div
               key={index}
-              className="flex flex-col items-center gap-2 bg-sky-900/60 p-8 rounded-md w-full"
+              className="flex flex-col items-center gap-3 bg-sky-900/60 p-8 rounded-md w-full"
             >
               <div className="text-5xl">{services.icon}</div>
-              <h1 className="text-2xl">{services.title}</h1>
+              <h1 className="text-1xl md:text-2xl">{services.title}</h1>
               <p className="text-sm">{services.content}</p>
-              <p className="text-sm px-12">{services.description}</p>
+              <p className="text-sm text-center">{services.description}</p> 
             </div>
           ))}
         </div>
-        <img src={wave2} alt="wave" className="h-[200px] w-full object-cover mix-blend-screen -translate-y-20 relative z-[0]"/>
+        <img src={wave2} alt="wave" className="hidden md:flex md:h-[300px] w-full object-cover mix-blend-screen translate-y-3 relative z-[0]"/>
       </div>
     </div>
   );

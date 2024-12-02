@@ -1,7 +1,7 @@
 import logoo from "../assets/logoo.png";
 const Navbar = () => {
   return (
-    <div className="flex items-center justify-between bg-black/20 py-2 md:py-4">
+    <div className="flex items-center justify-between bg-black/80 py-2 md:py-4">
       <div className="flex items-center ml-10 md:ml-20 hover:cursor-pointer">
         <img src={logoo} alt="logo" className="w-12" />
       </div>

@@ -28,7 +28,7 @@ const Banner2 = () => {
               className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center"
             >
               
-              <div className="space-y-3 xl:pr-36 p-4 border-l-2 border-b-2 border-l-sky-800 border-b-sky-800 ">
+              <div className="space-y-3 xl:pr-36 p-4 border-l-2 border-b-2 border-l-sky-800 border-b-sky-800 pl-10">
                 <p
                   data-aos="fade-up"
                   data-aos-delay="300"
@@ -58,7 +58,7 @@ const Banner2 = () => {
                 <img
                   src={items.image}
                   alt={items.title}
-                  className="w-full sm:w-[80%] mx-auto max-h-[350px] object-cover"
+                  className="w-full sm:w-[80%] mx-auto max-h-[350px] object-cover rounded-lg"
                 />
               </div>
             </div>

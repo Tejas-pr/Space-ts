@@ -31,7 +31,7 @@ const Banner = () => {
                 <img
                   src={items.image}
                   alt={items.title}
-                  className="w-full sm:w-[80%] mx-auto max-h-[350px] object-cover"
+                  className="w-full sm:w-[80%] mx-auto max-h-[350px] object-cover rounded-lg"
                 />
               </div>
               <div className="space-y-3 xl:pr-36 p-4 border-r-2 border-b-2 border-r-sky-800 border-b-sky-800 ">

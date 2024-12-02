@@ -20,7 +20,7 @@ const Hero = () => {
           <div></div>
         </div>
       </div>
-      <div className="absolute -bottom-20 w-full z-30 bg-gradient-to-b from-transparent from-10% to-black to-90% h-[20%] sm:h-[50px] md:[60px]"></div>
+      <div className="absolute -bottom-32 md:-bottom-20 w-full z-30 bg-gradient-to-b from-transparent from-10% to-black to-90% h-[20%] sm:h-[50px] md:[60px]"></div>
     </>
   );
 };
