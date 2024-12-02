@@ -1,13 +1,18 @@
-
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import Video from "./components/Video";
 function App() {
-
   return (
     <>
-          <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+      <div >
+        <div className="relative">
+           <Video />
+        </div>
+        <Navbar />
+        <Hero />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
