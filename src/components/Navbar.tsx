@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import logoo from "../assets/logoo.png";
 import { motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
