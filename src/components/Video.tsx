@@ -4,7 +4,7 @@ const Video = () => {
     <video
       autoPlay
       loop
-      className="fixed h-screen w-screen left-0 top-0 object-cover -z-10"
+      className="fixed h-[100%] w-screen left-0 top-0 object-cover -z-10"
     >
       <source src={video1} type="video/mp4" />
     </video>
