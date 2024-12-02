@@ -1,0 +1,71 @@
+import sateliteImg from "../assets/satellite.jpg";
+
+interface DATA {
+  image: string;
+  subTitle: string;
+  title: string;
+  description: string;
+}
+
+const data: DATA[] = [
+  {
+    image: sateliteImg,
+    subTitle: "Our Mission",
+    title: "Rapidscat",
+    description:
+      "RapidScat is a satellite instrument designed to measure ocean surface wind speeds and directions. It helps improve weather forecasting, storm tracking, and climate modeling by providing valuable wind data.",
+  },
+];
+
+const Banner = () => {
+  return (
+    <>
+      <section className="bg-black text-white pb-12 pt-12">
+        <div className="container">
+          {data.map((items, index) => (
+            <div
+              key={index}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center"
+            >
+              <div data-aos="zoom-in">
+                <img
+                  src={items.image}
+                  alt={items.title}
+                  className="w-full sm:w-[80%] mx-auto max-h-[350px] object-cover"
+                />
+              </div>
+              <div className="space-y-3 xl:pr-36 p-4 border-r-2 border-b-2 border-r-sky-800 border-b-sky-800 ">
+                <p
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  className="text-sky-800 uppercase"
+                >
+                  {items.subTitle}
+                </p>
+                <h1
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                  className="uppercase text-5xl"
+                >
+                  {items.title}
+                </h1>
+                <p data-aos="fade-up" data-aos-delay="700">
+                  {items.description}
+                </p>
+                <button
+                  data-aos="fade-up"
+                  data-aos-delay="900"
+                  className="bg-blue-400 text-white hover:bg-blue-500 px-4 py-1 rounded-md duration-200"
+                >
+                  View All
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Banner;

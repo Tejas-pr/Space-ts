@@ -1,10 +1,8 @@
-import Mounting from "../assets/moon.png";
 const Hero = () => {
   return (
     <>
       <div className="text-white">
         <div className="container grid grid-cols-1 md:grid-cols-2 gap-6 h-screen">
-          {/* Left Grid */}
           <div className="flex flex-col items-start justify-center ml-5 md:ml-10">
             <h1 className="text-4xl md:text-6xl font-bold">
               Exploring Beyond Horizons
@@ -19,16 +17,9 @@ const Hero = () => {
               Learn More
             </button>
           </div>
-
-          {/* Right Grid (Placeholder for content) */}
           <div></div>
         </div>
       </div>
-      {/* <img
-        src={Mounting}
-        alt=""
-        className="absolute right-0 bottom-0 w-full brightness-50 z-10"
-      /> */}
       <div className="absolute -bottom-20 w-full z-30 bg-gradient-to-b from-transparent from-10% to-black to-90% h-[20%] sm:h-[50px] md:[60px]"></div>
     </>
   );
