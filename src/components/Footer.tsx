@@ -4,18 +4,34 @@ import {
   LiaTwitter,
   LiaYoutube,
 } from "react-icons/lia";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
     <div className="bg-black/90">
       <section className="max-w-[1200px] mx-auto text-white py-5">
-        <div className="flex flex-wrap justify-center items-center gap-10">
-          <div className="p-8 flex-1 min-w-[300px] max-w-[400px]">
+        <motion.div
+          className="flex flex-wrap justify-center items-center gap-10"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          {/* Left Section */}
+          <motion.div
+            className="p-8 flex-1 min-w-[300px] max-w-[400px]"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 200 }}
+          >
             <h1 className="text-4xl">Want To Upgrade Yourself</h1>
             <p className="text-sm font-thin mt-2">
               Get exclusive best updates straight into your inbox
             </p>
-            <div className="mt-5">
+            <motion.div
+              className="mt-5"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+            >
               <label
                 htmlFor="input-group-1"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -42,17 +58,24 @@ const Footer = () => {
                   placeholder="name@flowbite.com"
                 />
               </div>
-              <button
-                data-aos="fade-up"
-                data-aos-delay="900"
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 className="bg-blue-400 text-white hover:bg-blue-500 px-4 py-2 rounded-md duration-200"
               >
                 Get Subscribe
-              </button>
-            </div>
-          </div>
+              </motion.button>
+            </motion.div>
+          </motion.div>
 
-          <div className="flex flex-row flex-wrap justify-center gap-14 flex-1 min-w-[300px] max-w-[600px]">
+          {/* Right Section */}
+          <motion.div
+            className="flex flex-row flex-wrap justify-center gap-14 flex-1 min-w-[300px] max-w-[600px]"
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+          >
+            {/* Links Section */}
             <div className="flex flex-col gap-y-5">
               <h1>Important Links</h1>
               <a href="#Home" className="font-thin">
@@ -83,9 +106,13 @@ const Footer = () => {
                 Support
               </a>
             </div>
+            {/* Social Icons */}
             <div className="flex flex-col gap-y-5">
               <h1 className="hidden md:flex">Socials</h1>
-              <div className="flex md:flex-row gap-x-10 md:gap-x-5">
+              <motion.div
+                className="flex md:flex-row gap-x-10 md:gap-x-5"
+                whileHover={{ scale: 1.1 }}
+              >
                 <a href="#LinkedinIn" className="font-thin text-2xl">
                   <LiaLinkedinIn />
                 </a>
@@ -98,10 +125,10 @@ const Footer = () => {
                 <a href="#Youtube" className="font-thin text-2xl">
                   <LiaYoutube />
                 </a>
-              </div>
+              </motion.div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
     </div>
   );

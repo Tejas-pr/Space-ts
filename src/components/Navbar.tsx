@@ -1,7 +1,18 @@
 import logoo from "../assets/logoo.png";
+import { motion } from "motion/react";
 const Navbar = () => {
   return (
-    <div className="flex items-center justify-between bg-black/80 py-2 md:py-4">
+    <motion.div
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.8,
+        delay: 0.3,
+        ease: [0, 0.71, 0.2, 1.01],
+      }}
+      id="navbar"
+      className="flex items-center justify-between bg-black/80 py-2 md:py-4"
+    >
       <div className="flex items-center ml-10 md:ml-20 hover:cursor-pointer">
         <img src={logoo} alt="logo" className="w-12" />
       </div>
@@ -26,7 +37,7 @@ const Navbar = () => {
           Login
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

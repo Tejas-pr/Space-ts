@@ -1,5 +1,5 @@
 import sateliteImg from "../assets/satellite.jpg";
-
+import { motion } from "motion/react"
 interface DATA {
   image: string;
   subTitle: string;
@@ -21,7 +21,15 @@ const Banner = () => {
   return (
     <>
       <section className="bg-black text-white pb-12 pt-12">
-        <div className="container">
+        <motion.div 
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.3,
+          ease: [0, 0.71, 0.2, 1.01]
+        }}
+        className="container">
           {data.map((items, index) => (
             <div
               key={index}
@@ -62,7 +70,7 @@ const Banner = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </section>
     </>
   );

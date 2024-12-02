@@ -2,6 +2,7 @@ import { FaBroadcastTower, FaGlobe, FaRegMoon, FaRocket } from "react-icons/fa";
 import { GiSatelliteCommunication } from "react-icons/gi";
 import { MdSatellite } from "react-icons/md";
 import wave2 from "../assets/wave2.gif";
+import { motion } from "framer-motion";
 
 export interface SERVICE {
   title: string;
@@ -56,24 +57,49 @@ const ServiceData: SERVICE[] = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  show: { opacity: 1, y: 0 },
+};
+
 const Services = () => {
   return (
     <div className="pt-4 pb-10 p-8 text-white bg-black relative z-50">
       <div className="min-h-[400px]">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 relative mt-10 z-10">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 relative mt-10 z-10"
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+        >
           {ServiceData.map((services, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={itemVariants}
               className="flex flex-col items-center gap-3 bg-sky-900/60 p-8 rounded-md w-full"
             >
               <div className="text-5xl">{services.icon}</div>
               <h1 className="text-1xl md:text-2xl">{services.title}</h1>
               <p className="text-sm">{services.content}</p>
-              <p className="text-sm text-center">{services.description}</p> 
-            </div>
+              <p className="text-sm text-center">{services.description}</p>
+            </motion.div>
           ))}
-        </div>
-        <img src={wave2} alt="wave" className="hidden md:flex md:h-[300px] w-full object-cover mix-blend-screen translate-y-3 relative z-[0]"/>
+        </motion.div>
+        <img
+          src={wave2}
+          alt="wave"
+          className="hidden md:flex md:h-[300px] w-full object-cover mix-blend-screen translate-y-3 relative z-[0]"
+        />
       </div>
     </div>
   );
